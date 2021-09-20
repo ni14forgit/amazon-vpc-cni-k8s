@@ -61,11 +61,12 @@ DOCKER_ARCH = $(lastword $(subst :, ,$(filter $(ARCH):%,amd64:amd64 arm64:arm64v
 # provide an alternate suffix or to omit.
 IMAGE_ARCH_SUFFIX = $(addprefix -,$(filter $(ARCH),arm64))
 # GOLANG_IMAGE is the building golang container image used.
+# GOLANG_IMAGE = golang:1.17
 GOLANG_IMAGE = golang:1.17
 # For the requested build, these are the set of Go specific build environment variables.
 export GOARCH ?= $(ARCH)
 export GOOS = linux
-export CGO_ENABLED = 0
+export CGO_ENABLED = 1
 # NOTE: Provided for local toolchains that require explicit module feature flag.
 export GO111MODULE = on
 export GOPROXY = direct
