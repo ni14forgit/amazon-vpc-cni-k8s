@@ -24,9 +24,9 @@ require (
 	golang.org/x/tools v0.1.5 // indirect
 	google.golang.org/grpc v1.29.0
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
-	k8s.io/api v0.18.6
-	k8s.io/apimachinery v0.18.6
-	k8s.io/client-go v0.18.6
+	k8s.io/api v0.19.14
+	k8s.io/apimachinery v0.19.14
+	k8s.io/client-go v0.19.14
 	k8s.io/cri-api v0.0.0-20191107035106-03d130a7dc28
 	sigs.k8s.io/controller-runtime v0.6.3
 )
