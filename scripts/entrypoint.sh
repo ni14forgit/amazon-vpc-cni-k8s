@@ -133,6 +133,9 @@ fi
 log_in_json info "Install CNI binary.."
 install aws-cni "$HOST_CNI_BIN_PATH"
 
+log_in_json info "Install nebula-helper-cni binary.."
+install nebula-helper-cni "$HOST_CNI_BIN_PATH"
+
 log_in_json info "Starting IPAM daemon in the background ... "
 ./aws-k8s-agent | tee -i "$AGENT_LOG_PATH" 2>&1 &
 
@@ -152,6 +155,7 @@ sed \
   -e s~__MTU__~"${AWS_VPC_ENI_MTU}"~g \
   -e s~__PLUGINLOGFILE__~"${AWS_VPC_K8S_PLUGIN_LOG_FILE}"~g \
   -e s~__PLUGINLOGLEVEL__~"${AWS_VPC_K8S_PLUGIN_LOG_LEVEL}"~g \
+  -e s~__NEBULA_LOG_LEVEL__~"${NEBULA_LOG_LEVEL:-info}"~g \
   10-aws.conflist > "$TMP_AWS_CONFLIST_FILE"
 
 if [[ "$ENABLE_BANDWIDTH_PLUGIN" == "true" ]]; then

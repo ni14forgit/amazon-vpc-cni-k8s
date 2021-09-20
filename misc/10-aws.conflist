@@ -14,6 +14,11 @@
       "type": "portmap",
       "capabilities": {"portMappings": true},
       "snat": true
+    },
+    {
+      "type": "nebula-helper-cni",
+      "logLevel": "__NEBULA_LOG_LEVEL__",
+      "interface": "ens5"
     }
   ]
 }
