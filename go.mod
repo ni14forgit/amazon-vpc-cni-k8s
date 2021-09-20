@@ -7,6 +7,7 @@ require (
 	github.com/containernetworking/cni v0.8.0
 	github.com/containernetworking/plugins v0.9.0
 	github.com/coreos/go-iptables v0.4.5
+	github.com/go-logr/logr v1.1.0 // indirect
 	github.com/golang/mock v1.4.1
 	github.com/golang/protobuf v1.4.2
 	github.com/google/go-jsonnet v0.16.0
